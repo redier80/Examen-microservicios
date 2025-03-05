@@ -10,6 +10,7 @@ public class UsuarioRequest {
     private String apellidos;
     private String email;
     private String username;
+    private String password;
     private String tipoDoc;
     private String numDoc;
     /*private Boolean isAccountNonExpired;

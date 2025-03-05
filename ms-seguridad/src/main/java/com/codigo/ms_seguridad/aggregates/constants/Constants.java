@@ -12,4 +12,7 @@ public class Constants {
 
     public static final String ENDPOINTS_USER= "/users/user/**";
     public static final String ENDPOINTS_ADMIN = "/users/admin/**";
+
+    public static final String ENDPOINTS_ACTUATOR= "/actuator/refresh";
+    public static final String ENDPOINTS_ACTUATOR_BUS="/actuator/busrefresh";
 }
