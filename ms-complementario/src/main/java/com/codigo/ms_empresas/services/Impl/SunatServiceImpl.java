@@ -20,8 +20,10 @@ public class SunatServiceImpl implements SunatService {
     private SunatClient sunatClient;
     @Autowired
     private EmpresaRepository empresaRepository;
+
     @Value("${token.api}")
     private String token;
+
     @Override
     public SunatResponse buscarPorRUC(String numRuc) {
         return execution(numRuc);
@@ -128,7 +130,7 @@ public class SunatServiceImpl implements SunatService {
 
     //EJECUTANDO EL API EXTERNA
     private SunatResponse execution(String numRuc){
-        String tokenOk = "Bearer "+token;
+        String tokenOk = "Bearer "+ token;
         return sunatClient.getEmpresa(numRuc,tokenOk);
 
     }

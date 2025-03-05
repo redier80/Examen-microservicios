@@ -23,6 +23,7 @@ public class ComplementarioController {
         if (seguridadClient.validateToken(token)){
 
             SeguridadResponse seguridadResponse= seguridadClient.getInfoUser(token);
+
             var user= seguridadResponse.getUsername();
             SunatResponse empresaEntity = sunatService.registrarEmpresa(numRuc,user);
             return ResponseEntity.ok(empresaEntity);
@@ -39,6 +40,10 @@ public class ComplementarioController {
         }else {
             return ResponseEntity.status(401).body("Token invalido");
         }
+    }
+    @GetMapping("/test/{numRuc}")
+    public ResponseEntity<?> test(@PathVariable String numRuc){
+        return ResponseEntity.ok(sunatService.buscarPorRUC(numRuc));
     }
 
 }
